@@ -224,7 +224,7 @@ def generate_app_base(sph)->str:
 
 def generate_app_trait(sph, gen, g_of1, g_of2, base, trait_exceptions_list)->str:
     trait = ""
-    trait_rand_list = [] #these are temporary as well
+    trait_rand_list = [] 
 
 
     if base == 'humanoid':
