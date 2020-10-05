@@ -1,0 +1,43 @@
+{
+	"good male name": ["Yarwen", "Abbi", "Irelio", "Rurikan", "Lorthar","Michelvicci", "Cyrelian","The High One","God","Riden","Pashirem"],
+	"good female name": ["Edin","Corrinth", "Nathe", "Cosla", "Elma", "Frida","Lana","Elizwa"],
+	"good nonb name": ["Cosla","Corrinth","Abbi", "Irelio", "Od","Nathe"],
+	"neutral male name": ["Zays", "Hodis", "Poisonet","Gael", "Nima","Riden"],
+	"neutral female name": ["Capri","Ischia","Nisida","Procida","Vivara", "Tabarca", "Medes", "Formigues", "Mazarrón"],
+	"neutral nonb name": ["Capri","Ischia","Nisida","Procida","Vivara","Poisonet","Gael", "Nima"],
+	"evil male name": ["Molach","Carne","Elathort", "Reshef","Rehoram","Damded","Devil","Anibe","Armok","Belzshazub"],
+	"evil female name": ["Nickel","Lilarth","Mot", "Loten", "Kashiart", "Anot", "Sherah"],
+	"evil nonb name": ["Nickel","Mot", "Loten", "Kashiart","Elathort", "Reshef","Rehoram","Damded","Hadrenox"],
+	"force part 1 name": ["Wind","Winds","Sands","Sand","Force", "Fire", "Flow","Sound","Eternity","Sun","Age","Star","Star","Star"],
+	"force part 2 name": ["Wind","Winds","Sands","Sand","Force", "Fire", "Flow","Sound","Eternity","Night","Day","Stars","Hell","Paradiso"],
+	"eldritch name": ["Scylla","Aldhell","Consolagh","Garnag", "Hajgol", "Staghorn","Gloom","Morfarl","Bobert","拜托", "Jinn", "Dokkebi","Molachanok","Vyrn","Ermac"],
+	
+	"good god of 1": ["light", "life","nature","music","peace","courage","light", "life","nature","music","peace"],
+	"neutral god of 1": ["nature","balance","music","war","peace","harmony","nature","balance","music","war","peace"],
+	"evil god of 1": ["death","murder","war","darkness","death","death","murder","war","darkness","death"],
+	"force god of 1":["light", "life","nature","peace","harmony","stars","death","light", "life","nature","peace","harmony","stars","death"],
+	"eldritch god of 1":["unspeekable horror"],
+	
+	"good god of 2":["love","courage","hope","compassion","strength","honor", "covenants","truth","health"],
+	"neutral god of 2":["strength","honor","revenge","truth","oaths","cycles"],
+	"evil god of 2":["revenge","ruin","debauchery","hate","avarice","greed","lust","sickness"],
+	"force god of 2":["an unseen force"],
+	"eldritch god of 2":["damnation","judgement","ascendence"],
+
+	"good god base templates":["humanoid", "humanoid", "humanoid", "half-beast", "half-beast", "beast", "fantacreature", "angel-like"],
+	"neutral god base templates":["humanoid", "humanoid", "humanoid", "half-beast", "half-beast", "beast", "beast", "fantacreature", "fantacreature"],
+	"evil god base templates":["humanoid", "humanoid", "humanoid", "half-beast", "half-beast", "beast", "fantacreature", "demon-like"],
+	"force god base templates":["visible force", "invisible force"],
+	"eldritch god base templates":["tentacled behemoth", "contorted humanoid", "winged horror"],
+
+	"beast templates":["Ape","Black Bear","Hawk","Boar","Deer","Wolf", "Lion","Giant Crab","Goat","Elephant","Spider", "Snake", "Whale", "Fish","Raven"],
+	"half-beast templates":["Half-Ape","Half-Black Bear","Half-Hawk","Half-Boar","Half-Deer","Half-Wolf", "Half-Lion","Half-Giant Crab","Half-Goat","Half-Elephant","Half-Spider", "Half-Snake", 
+		          "Half-Whale", "Half-Fish","Half-Raven"],
+	"fantacreature templates":["Sphinx","Yeti","Hydra","Phoenix","Manticore","Dragon","Minotaur","Leviathan","Towering Giant","Unicorn","Changeling","Hippogryph","Kraken"],
+
+	"good god countenance":["joyful", "stoic", "distant", "caring", "strong", "parental", "youthful", "romantic", "stalwart"],
+	"neutral god countenance":["stoic", "powerful", "feared", "trickster", "self-interested", "sleepy","romantic"],
+	"evil god countenance":["powerful", "feared", "trickster", "sadistic", "true-evil", "fickle"],
+	"force god countenance":["powerful", "weak", "middling"],
+	"eldritch god countenance":["horrifying", "disgusting", "gorous", "terrorizing"]
+}
