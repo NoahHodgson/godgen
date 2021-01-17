@@ -1,6 +1,6 @@
 #This is the functions and helpers that runs the generate_god program
 import json, FantasyGod, random
-with open(r'random_generator.json') as data_file:
+with open(r"random_generator.json") as data_file:
     RANDOM_GENERATOR = json.load(data_file)
 
 def pick_god_gender(sphere:str)->str:
@@ -53,7 +53,7 @@ def pick_god_name(sphere:str, gender:str)->str:
 
 def pick_god_of1(sphere:str,name:str)->str:
     '''
-    Chooses what sphere the god is going to be based on the name and the god's sphere, with some name's getting the odds modified
+    Chooses what sphere the god is going to be based on the name and the god"s sphere, with some name"s getting the odds modified
     to give them a more likely chance of getting an attribute that defines them. Uses random.choice method and lists.
     '''
     list=["air", "earth", "fire", "water","time","storms","metals","unseen forces","fertility","stars","oceans","volcanos","seasons","afterlife"]
@@ -77,7 +77,7 @@ def pick_god_of1(sphere:str,name:str)->str:
 
 def pick_god_of2(sphere:str, name:str, god_of:str)->str:
     '''
-    Chooses what sphere the god is going to be based on the name and the god's sphere, with some name's getting the odds modified
+    Chooses what sphere the god is going to be based on the name and the god"s sphere, with some name"s getting the odds modified
     to give them a more likely chance of getting an attribute that defines them. Uses random.choice method and lists. This list is more
     about the personality of the god. All will merge with json file
     '''
@@ -227,61 +227,63 @@ def generate_app_trait(sph, gen, g_of1, g_of2, base, trait_exceptions_list)->str
     trait_rand_list = [] 
 
 
-    if base == 'humanoid':
-        trait_rand_list.extend([random.choice(['black','red','blonde','white','brown','light green'])+' hair', random.choice(["axe", "sword", "lance", "bow", "staff", "book"]),
-                                "skinny", "heavy-set", "youthful", "bald", "strong", random.choice(['robe', 'dress', 'toga', 'crown', 'armor']),
-                                 'chaste'])
+    if base == "humanoid":
+        #trait_rand_list.extend([random.choice(["black","red","blonde","white","brown","light green"])+" hair"])
+        #trait_rand_list.extend([random.choice(["axe", "sword", "lance", "bow", "staff", "book"])])
+        #trait_rand_list.extend([random.choice(["robe", "dress", "toga", "crown", "armor"])])
+        trait_rand_list.extend(["skinny", "heavy-set", "youthful", "bald", "strong","chaste"])
     elif base in RANDOM_GENERATOR["beast templates"] or base in RANDOM_GENERATOR["fantacreature templates"] or base in RANDOM_GENERATOR["half-beast templates"]:
-        trait_rand_list.extend(["winged","trail of "+random.choice(["flames","thunder","light","shadow","snow","smoke"]), random.choice(['1','2','3','many'])+" horn(s)",
-                                'strong','youthful', 'gaunt', "scaly", "furry", "leathery", "mesmerizing", 'color of '+random.choice(['gold','night','ruby','amathyst','the sun','blood'])])
+        #trait_rand_list.extend(["trail of "+random.choice(["flames","thunder","light","shadow","snow","smoke"])])
+       # trait_rand_list.extend([random.choice(["1","2","3","many"])+" horn(s)"])
+        #trait_rand_list.extend(["color of "+random.choice(["gold","night","ruby","amathyst","the sun","blood"])])
+        trait_rand_list.extend(["winged","strong","youthful", "gaunt", "scaly", "furry", "leathery", "mesmerizing"])
     elif base == "angel-like":
         trait_rand_list.extend(["silvery wings", "golden wings", "halo of light", "halo of fire", "fiery sword", "fiery tongue", "blinding aura"])
     elif base == "demon-like":
         trait_rand_list.extend(["leathery wings", "jetblack wings", "many horns", "two horns", "axe", "forked-tongue", "deceptive false appearance"])
     #gender 
     elif base == "visible force":
-        trait_rand_list.extend([random.choice(['red','blue','purple','orange','white','grey','green']),'slow','fast', 'painful', 'numbing',
-                                 "shocking","invigorating","calming"])
+        #trait_rand_list.extend([random.choice(["red","blue","purple","orange","white","grey","green"])])
+        trait_rand_list.extend(["slow","fast", "painful", "numbing","shocking","invigorating","calming"])
 
 
     elif base == "invisible force":
-        trait_rand_list.extend(['slow','fast', 'painful', 'numbing',"shocking", "invigorating","calming"])
+        trait_rand_list.extend(["slow","fast", "painful", "numbing","shocking", "invigorating","calming"])
 
     
     elif "tentacled behemoth" == base:
-        trait_rand_list.extend([random.choice(["eight","dozens of","hundreds of", "thousands of", "unfathomable amount of"])+" tentacles",
-                                 random.choice(['one']*3+['two','three','five','seven','ten','dozens',"unfathomable amount of"])+" eyes",
-                                 "black","green","purple", "likes cookies", "craves flesh","silky", "scaly", "fleshy", "feathery"])
+        #trait_rand_list.extend([random.choice(["eight","dozens of","hundreds of", "thousands of", "unfathomable amount of"])+" tentacles"])
+        #trait_rand_list.extend([random.choice(["one"]*3+["two","three","five","seven","ten","dozens","unfathomable amount of"])+" eyes"])
+        trait_rand_list.extend(["black","green","purple", "likes cookies", "craves flesh","silky", "scaly", "fleshy", "feathery"])
 
 
     elif "contorted humanoid" == base:
-        trait_rand_list.extend([random.choice(['one'+'two','three','five','seven','ten'])+" eyes",
-                                 "black","pale","blood red", "likes cookies", "craves flesh", "missing " + random.choice(["head","hands","legs"]),
-                                 "talons","extra set of arms", "extra mouth","silky", "scaly", "fleshy", "feathery","weak","emmaciated"])
+        #trait_rand_list.extend([random.choice(["one"+"two","three","five","seven","ten"])+" eyes"])
+        #trait_rand_list.extend(["missing " + random.choice(["head","hands","legs"])])
+        trait_rand_list.extend(["black","pale","blood red", "likes cookies", "craves flesh", "talons","extra set of arms", "extra mouth","silky", 
+            "scaly", "fleshy", "feathery","weak","emmaciated"])
 
         
     elif "winged horror" == base:
-        trait_rand_list.extend([random.choice(["silky", "scaly", "fleshy", "feathery"])+ " wings","silky", "scaly", "fleshy", "feathery",
-                                 "strong","gaunt", "resembles ALIEN", "strong tail with stinger/barbs"])
+        #trait_rand_list.extend([random.choice(["silky", "scaly", "fleshy", "feathery" + " wings"])])
+        trait_rand_list.extend(["silky", "scaly", "fleshy", "feathery", "strong","gaunt", "resembles ALIEN", "strong tail with stinger/barbs"])
 
     if gen == "male":
-        trait_rand_list.extend(['beard', "chissled-features", "handsome"])
+        trait_rand_list.extend(["beard", "chissled-features", "handsome"])
     elif gen == "female":
         trait_rand_list.extend(["flowing hair", "alluring", "beautiful"])
     elif gen == "nonb":
         trait_rand_list.extend(["fey"])
     #attribute add more later
-    if g_of1 == "fire" or g_of1 =="volcanos":
-        trait_rand_list.extend([random.choice(['hair','halo','crown','sword', 'voice', 'cloak'])+" of flames"]*2)
+    #if g_of1 == "fire" or g_of1 =="volcanos":
+        #trait_rand_list.extend([random.choice(["hair","halo","crown","sword", "voice", "cloak"])+" of flames"]*2)
 
     #these two statements are temporary until I can figure out where my error is.
-    while None in trait_rand_list:
-        trait_rand_list.remove(None)
- 
+
     #get trait
     trait = random.choice(trait_rand_list)
     if trait in trait_exceptions_list:
-        generate_app_trait(sph, gen, g_of1, g_of2, base, trait_exceptions_list)
+        return generate_app_trait(sph, gen, g_of1, g_of2, base, trait_exceptions_list)
     else:
         print(trait)
         print(base)
@@ -304,8 +306,11 @@ def generate_app_countenance(sph, g_of1, g_of2, base)->str:
 def generate_god_appearance(sph, gen, g_of1, g_of2)->dict:
     base = generate_app_base(sph)
     trait1 = generate_app_trait(sph, gen, g_of1, g_of2, base, [])
+    print("trait1: " + trait1)
     trait2 = generate_app_trait(sph, gen, g_of1, g_of2, base, [trait1])
+    print("trait2: " + trait2)
     trait3 = generate_app_trait(sph, gen, g_of1, g_of2, base, [trait1, trait2])
+    print("trait 3: " + trait3)
     countenance = generate_app_countenance(sph, g_of1, g_of2, base)
     return {"base": base, "trait1": trait1, "trait2": trait2, "trait3": trait3, "countenance": countenance}
 
