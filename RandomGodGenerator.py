@@ -332,7 +332,7 @@ def generateTotallyRandomGod(fant_lvl: int)->FantasyGod:
     god = FantasyGod.FantasyGod(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
     return god
 
-Adam = generateTotallyRandomGod(2)
+Adam = generateTotallyRandomGod(1)
 print("\n")
 Adam.printGod()
 
