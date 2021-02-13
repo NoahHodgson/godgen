@@ -222,72 +222,76 @@ def generate_app_base(sph)->str:
     base = genBeastFant(base)
     return base
 
-def generate_app_trait(sph, gen, g_of1, g_of2, base, trait_exceptions_list)->str:
+def generate_form_trait(sph, gen, g_of1, g_of2, base, trait_exceptions_list)->str:
     trait = ""
     trait_rand_list = [] 
 
-
+    #types-of
     if base == "humanoid":
-        #trait_rand_list.extend([random.choice(["black","red","blonde","white","brown","light green"])+" hair"])
-        #trait_rand_list.extend([random.choice(["axe", "sword", "lance", "bow", "staff", "book"])])
-        #trait_rand_list.extend([random.choice(["robe", "dress", "toga", "crown", "armor"])])
-        trait_rand_list.extend(["skinny", "heavy-set", "youthful", "bald", "strong","chaste"])
+        trait_rand_list.extend(RANDOM_GENERATOR["human forms"])
     elif base in RANDOM_GENERATOR["beast templates"] or base in RANDOM_GENERATOR["fantacreature templates"] or base in RANDOM_GENERATOR["half-beast templates"]:
-        #trait_rand_list.extend(["trail of "+random.choice(["flames","thunder","light","shadow","snow","smoke"])])
-       # trait_rand_list.extend([random.choice(["1","2","3","many"])+" horn(s)"])
-        #trait_rand_list.extend(["color of "+random.choice(["gold","night","ruby","amathyst","the sun","blood"])])
-        trait_rand_list.extend(["winged","strong","youthful", "gaunt", "scaly", "furry", "leathery", "mesmerizing"])
+        trait_rand_list.extend(RANDOM_GENERATOR["beast/hb forms"])
     elif base == "angel-like":
-        trait_rand_list.extend(["silvery wings", "golden wings", "halo of light", "halo of fire", "fiery sword", "fiery tongue", "blinding aura"])
+        trait_rand_list.extend(RANDOM_GENERATOR["angel forms"])
     elif base == "demon-like":
-        trait_rand_list.extend(["leathery wings", "jetblack wings", "many horns", "two horns", "axe", "forked-tongue", "deceptive false appearance"])
-    #gender 
+        trait_rand_list.extend(RANDOM_GENERATOR["demon forms"])
     elif base == "visible force":
-        #trait_rand_list.extend([random.choice(["red","blue","purple","orange","white","grey","green"])])
-        trait_rand_list.extend(["slow","fast", "painful", "numbing","shocking","invigorating","calming"])
-
-
+        trait_rand_list.extend(RANDOM_GENERATOR["vis force forms"])
     elif base == "invisible force":
-        trait_rand_list.extend(["slow","fast", "painful", "numbing","shocking", "invigorating","calming"])
-
-    
+        trait_rand_list.extend(RANDOM_GENERATOR["invis force forms"])
     elif "tentacled behemoth" == base:
-        #trait_rand_list.extend([random.choice(["eight","dozens of","hundreds of", "thousands of", "unfathomable amount of"])+" tentacles"])
-        #trait_rand_list.extend([random.choice(["one"]*3+["two","three","five","seven","ten","dozens","unfathomable amount of"])+" eyes"])
-        trait_rand_list.extend(["black","green","purple", "likes cookies", "craves flesh","silky", "scaly", "fleshy", "feathery"])
-
-
+        trait_rand_list.extend(RANDOM_GENERATOR["tentacle forms"])
     elif "contorted humanoid" == base:
-        #trait_rand_list.extend([random.choice(["one"+"two","three","five","seven","ten"])+" eyes"])
-        #trait_rand_list.extend(["missing " + random.choice(["head","hands","legs"])])
-        trait_rand_list.extend(["black","pale","blood red", "likes cookies", "craves flesh", "talons","extra set of arms", "extra mouth","silky", 
-            "scaly", "fleshy", "feathery","weak","emmaciated"])
-
-        
+        trait_rand_list.extend(RANDOM_GENERATOR["cont forms"])
     elif "winged horror" == base:
-        #trait_rand_list.extend([random.choice(["silky", "scaly", "fleshy", "feathery" + " wings"])])
-        trait_rand_list.extend(["silky", "scaly", "fleshy", "feathery", "strong","gaunt", "resembles ALIEN", "strong tail with stinger/barbs"])
-
-    if gen == "male":
-        trait_rand_list.extend(["beard", "chissled-features", "handsome"])
-    elif gen == "female":
-        trait_rand_list.extend(["flowing hair", "alluring", "beautiful"])
-    elif gen == "nonb":
-        trait_rand_list.extend(["fey"])
-    #attribute add more later
-    #if g_of1 == "fire" or g_of1 =="volcanos":
-        #trait_rand_list.extend([random.choice(["hair","halo","crown","sword", "voice", "cloak"])+" of flames"]*2)
-
-    #these two statements are temporary until I can figure out where my error is.
-
+        trait_rand_list.extend(RANDOM_GENERATOR["winged forms"])
     #get trait
     trait = random.choice(trait_rand_list)
-    if trait in trait_exceptions_list:
-        return generate_app_trait(sph, gen, g_of1, g_of2, base, trait_exceptions_list)
+    print(trait)
+    print(base)
+    return trait
+
+def generate_phys_trait(sph, gen, g_of1, g_of2, base, trait_exceptions_list)->str:
+    trait = ""
+    trait_rand_list = [] 
+
+    #types-of
+    if base == "humanoid":
+        trait_rand_list.extend(RANDOM_GENERATOR["human phys"])
+    elif base in RANDOM_GENERATOR["beast templates"] or base in RANDOM_GENERATOR["fantacreature templates"] or base in RANDOM_GENERATOR["half-beast templates"]:
+        trait_rand_list.extend(RANDOM_GENERATOR["beast/hb phys"])
+    elif base == "angel-like":
+        trait_rand_list.extend(RANDOM_GENERATOR["angel phys"])
+    elif base == "demon-like":
+        trait_rand_list.extend(RANDOM_GENERATOR["demon phys"])
+    elif base == "visible force":
+        trait_rand_list.extend(RANDOM_GENERATOR["vis force phys"])
+    elif base == "invisible force":
+        trait_rand_list.extend(RANDOM_GENERATOR["invis force phys"])
+    elif "tentacled behemoth" == base:
+        trait_rand_list.extend(RANDOM_GENERATOR["tentacle phys"])
+    elif "contorted humanoid" == base:
+        trait_rand_list.extend(RANDOM_GENERATOR["cont phys"])
+    elif "winged horror" == base:
+        trait_rand_list.extend(RANDOM_GENERATOR["winged phys"])
+    #get trait
+    trait = random.choice(trait_rand_list)
+    print(trait)
+    print(base)
+    return trait
+
+
+def generate_item_trait(sph, gen, g_of1, g_of2, base, trait_exceptions_list)->str:
+    trait = ""
+    trait_rand_list = []
+    if base == "humanoid" or base in RANDOM_GENERATOR["half-beast templates"] or base == "angel-like" or base == "demon-like":
+        trait_rand_list = RANDOM_GENERATOR["human-adj items"]
     else:
-        print(trait)
-        print(base)
-        return trait
+        trait_rand_list = RANDOM_GENERATOR["non-adj items"]
+    trait = random.choice(trait_rand_list)
+    print(trait)
+    print(base)
+    return trait
 
 def generate_app_countenance(sph, g_of1, g_of2, base)->str:
     count = ""
@@ -305,14 +309,14 @@ def generate_app_countenance(sph, g_of1, g_of2, base)->str:
 
 def generate_god_appearance(sph, gen, g_of1, g_of2)->dict:
     base = generate_app_base(sph)
-    trait1 = generate_app_trait(sph, gen, g_of1, g_of2, base, [])
+    trait1 = generate_form_trait(sph, gen, g_of1, g_of2, base, [])
     print("trait1: " + trait1)
-    trait2 = generate_app_trait(sph, gen, g_of1, g_of2, base, [trait1])
+    trait2 = generate_phys_trait(sph, gen, g_of1, g_of2, base, [trait1])
     print("trait2: " + trait2)
-    trait3 = generate_app_trait(sph, gen, g_of1, g_of2, base, [trait1, trait2])
+    trait3 = generate_item_trait(sph, gen, g_of1, g_of2, base, [trait1, trait2])
     print("trait 3: " + trait3)
     countenance = generate_app_countenance(sph, g_of1, g_of2, base)
-    return {"base": base, "trait1": trait1, "trait2": trait2, "trait3": trait3, "countenance": countenance}
+    return {"base": base, "form": trait1, "phys": trait2, "item": trait3, "countenance": countenance}
 
 def generateTotallyRandomGod(fant_lvl: int)->FantasyGod:
     sph=random.choice(["good","neutral","evil","force","eldritch"])

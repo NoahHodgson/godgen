@@ -17,9 +17,9 @@ class FantasyGod:
     has_incarnate = None
     appearance = {
         "base": None,
-        "trait1": None,
-        "trait2": None,
-        "trait3": None,
+        "form": None,
+        "phys": None,
+        "item": None,
         "countenance":None
     }
 
