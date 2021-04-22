@@ -10,7 +10,7 @@ def pick_god_gender(sphere: str) -> str:
     Decides what gender the god will have based on the sphere of the god using the random.choice method and lists.
     '''
     if sphere == "good":
-        return random.choice(["male"] * 6 + ["female"] * (6) + ["nonb"] * (2))
+        return random.choice(["male"] * 6 + ["female"] * 6 + ["nonb"] * (2))
     if sphere == "neutral":
         return random.choice(["male"] * (6) + ["female"] * (6) + ["nonb"] * (2))
     if sphere == "evil":
