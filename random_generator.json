@@ -37,7 +37,7 @@
 	"human forms":["skinny", "heavy-set", "youthful", "strong", "chaste", "elderly"],
 	"angel forms":["classical angel", "fantasy angel", "~biblical~ angel"],
 	"demon forms":["classical demon", "DOOM demon", "fallen angel"],
-	"beast/hb forms":["beastlike in nature", "human-like in nature"],
+	"beast/hb forms":["beastlike in behavior", "human-like in behavior"],
 	"vis force forms":["red","blue","purple","orange","white","grey","green"],
 	"invis force forms":["invisible"],
 	"tentacle forms":["like an octopus/squid", "an unending mass of tentacles"],
