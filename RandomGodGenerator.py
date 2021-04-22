@@ -1,22 +1,24 @@
 # This is the functions and helpers that runs the generate_god program
-import json, FantasyGod, random
+import FantasyGod
+import json
+import random
 
 with open(r"random_generator.json") as data_file:
     RANDOM_GENERATOR = json.load(data_file)
 
 
 def pick_god_gender(sphere: str) -> str:
-    '''
+    """
     Decides what gender the god will have based on the sphere of the god using the random.choice method and lists.
-    '''
+    """
     if sphere == "good":
-        return random.choice(["male"] * 6 + ["female"] * 6 + ["nonb"] * (2))
+        return random.choice(["male"] * 6 + ["female"] * 6 + ["nonb"] * 2)
     if sphere == "neutral":
-        return random.choice(["male"] * (6) + ["female"] * (6) + ["nonb"] * (2))
+        return random.choice(["male"] * 6 + ["female"] * 6 + ["nonb"] * 2)
     if sphere == "evil":
-        return random.choice(["male"] * (6) + ["female"] * (6) + ["nonb"] * (2))
+        return random.choice(["male"] * 6 + ["female"] * 6 + ["nonb"] * 2)
     if sphere == "eldritch":
-        return random.choice(["male"] * (3) + ["female"] * (2) + ["uncomp"] * (7) + ["force"] * (3))
+        return random.choice(["male"] * 3 + ["female"] * 2 + ["uncomp"] * 7 + ["force"] * 3)
     if sphere == "force":
         return "force"
     else:
@@ -24,9 +26,9 @@ def pick_god_gender(sphere: str) -> str:
 
 
 def pick_god_name(sphere: str, gender: str) -> str:
-    '''
+    """
     Basically uses the sphere and gender of the god and assign it a name using the random.choice method and lists.
-    '''
+    """
     if sphere == "good" and gender == "male":
         return random.choice(RANDOM_GENERATOR["good male name"])
     if sphere == "good" and gender == "female":
@@ -55,60 +57,60 @@ def pick_god_name(sphere: str, gender: str) -> str:
 
 
 def pick_god_of1(sphere: str, name: str) -> str:
-    '''
+    """
     Chooses what sphere the god is going to be based on the name and the god"s sphere, with some name"s getting the odds modified
     to give them a more likely chance of getting an attribute that defines them. Uses random.choice method and lists.
-    '''
-    list = ["air", "earth", "fire", "water", "time", "storms", "metals", "unseen forces", "fertility", "stars",
-            "oceans", "volcanos", "seasons", "afterlife"]
+    """
+    of_list = ["air", "earth", "fire", "water", "time", "storms", "metals", "unseen forces", "fertility", "stars",
+               "oceans", "volcanos", "seasons", "afterlife"]
     if sphere == "good":
-        list.extend(RANDOM_GENERATOR["good god of 1"])
+        of_list.extend(RANDOM_GENERATOR["good god of 1"])
     if sphere == "neutral":
-        list.extend(RANDOM_GENERATOR["neutral god of 1"])
+        of_list.extend(RANDOM_GENERATOR["neutral god of 1"])
     if sphere == "evil":
-        list.extend(RANDOM_GENERATOR["evil god of 1"])
+        of_list.extend(RANDOM_GENERATOR["evil god of 1"])
     if sphere == "force":
-        list.extend(RANDOM_GENERATOR["force god of 1"])
+        of_list.extend(RANDOM_GENERATOR["force god of 1"])
     if sphere == "eldritch":
-        list.extend(RANDOM_GENERATOR["eldritch god of 1"])
+        of_list.extend(RANDOM_GENERATOR["eldritch god of 1"])
     # sphere above, name below; add more later, may never happen
     if "Devil" in name:
-        list.extend(["chaos", "chaos", "chaos", "murder", "murder", "murder"])
+        of_list.extend(["chaos", "chaos", "chaos", "murder", "murder", "murder"])
     if "Edin" in name:
-        list.extend(["life", "life", "life", "nature", "nature", "nature"])
-    return random.choice(list)
+        of_list.extend(["life", "life", "life", "nature", "nature", "nature"])
+    return random.choice(of_list)
 
 
 def pick_god_of2(sphere: str, name: str, god_of: str) -> str:
-    '''
+    """
     Chooses what sphere the god is going to be based on the name and the god"s sphere, with some name"s getting the odds modified
     to give them a more likely chance of getting an attribute that defines them. Uses random.choice method and lists. This list is more
     about the personality of the god. All will merge with json file
-    '''
-    list = []
+    """
+    of_list = []
     if sphere == "good":
-        list.extend(RANDOM_GENERATOR["good god of 2"])
+        of_list.extend(RANDOM_GENERATOR["good god of 2"])
     if sphere == "neutral":
-        list.extend(RANDOM_GENERATOR["neutral god of 2"])
+        of_list.extend(RANDOM_GENERATOR["neutral god of 2"])
     if sphere == "evil":
-        list.extend(RANDOM_GENERATOR["evil god of 2"])
+        of_list.extend(RANDOM_GENERATOR["evil god of 2"])
     if sphere == "force":
-        list.extend(RANDOM_GENERATOR["force god of 2"])
+        of_list.extend(RANDOM_GENERATOR["force god of 2"])
     if sphere == "eldritch":
-        list.extend(RANDOM_GENERATOR["eldritch god of 2"])
+        of_list.extend(RANDOM_GENERATOR["eldritch god of 2"])
 
-    if list == []:
+    if not of_list:
         return "error"
-    return random.choice(list)
+    return random.choice(of_list)
 
 
 def pick_god_involvement(sphere: str, fantasy_level: int) -> int:
-    '''
+    """
     Using sphere and fantasy level, an equation using some rng from random.choice, is performed.
     An involvement level between 4 and 5 is a moderate level of involvement from a god. Something like
     2 or a 3 would mean the god is disinterested and anything higher than a 7 means the god is really
     a busybody.
-    '''
+    """
     if sphere == "good" or sphere == "evil":
         involvement = random.choice([1, 2, 3, 4, 5]) + fantasy_level
     elif sphere == "neutral":
@@ -123,19 +125,19 @@ def pick_god_involvement(sphere: str, fantasy_level: int) -> int:
 
 
 def pick_god_angel_like(sphere: str, involvement_level: int, fantasy_level: int) -> bool:
-    '''
+    """
     Using different formulas for each sphere (good and evil use the same), a random
     function is used to determined whether a god has angels or not. Involvement Level and
     Fantasy Level come into play. FORMULA NOT FINAL!
-    '''
+    """
     if sphere == "good" or sphere == "evil":
         if involvement_level > 8:
             number = -1
-        elif involvement_level > 5 and involvement_level < 8:
+        elif 5 < involvement_level < 8:
             number = 2
         else:
             number = 0
-        list = [True] * (fantasy_level + number + 1) + [False] * (fantasy_level + 1)
+        al_list = [True] * (fantasy_level + number + 1) + [False] * (fantasy_level + 1)
     elif sphere == "neutral":
         if involvement_level > 7:
             number = 2
@@ -146,32 +148,32 @@ def pick_god_angel_like(sphere: str, involvement_level: int, fantasy_level: int)
         else:
             number = 0
             number2 = 2
-        list = [True] * (fantasy_level + number + 1) + [False] * (fantasy_level + number2 + 1)
+        al_list = [True] * (fantasy_level + number + 1) + [False] * (fantasy_level + number2 + 1)
     elif sphere == "eldritch":
         if involvement_level > 7:
             number = 3
         else:
             number = 0
-        list = [True] * (fantasy_level + number + 1) + [False] * 8
+        al_list = [True] * (fantasy_level + number + 1) + [False] * 8
     elif sphere == "force":
-        list = [True] * 1 + [False] * 7
-    return random.choice(list)
+        al_list = [True] * 1 + [False] * 7
+    return random.choice(al_list)
 
 
 def pick_god_incarnate(sphere: str, involvement_level: int, fantasy_level: int) -> bool:
-    '''
+    """
     Using different formulas for each sphere (good and evil use the same), a random
     function is used to determined whether a god has angels or not. Involvement Level and
     Fantasy Level come into play. FORMULA NOT FINAL!
-    '''
+    """
     if sphere == "good" or sphere == "evil":
         if involvement_level > 8:
             number = 2
-        elif involvement_level > 5 and involvement_level < 8:
+        elif 5 < involvement_level < 8:
             number = 0
         else:
             number = 1
-        list = [True] * (fantasy_level + number) + [False] * (fantasy_level)
+        gi_list = [True] * (fantasy_level + number) + [False] * fantasy_level
     elif sphere == "neutral":
         if involvement_level > 7:
             number = 2
@@ -182,7 +184,7 @@ def pick_god_incarnate(sphere: str, involvement_level: int, fantasy_level: int) 
         else:
             number = 2
             number2 = 1
-        list = [True] * (fantasy_level + number) + [False] * (fantasy_level + number2)
+        gi_list = [True] * (fantasy_level + number) + [False] * (fantasy_level + number2)
     elif sphere == "eldritch":
         if involvement_level > 8:
             number = 3
@@ -190,12 +192,12 @@ def pick_god_incarnate(sphere: str, involvement_level: int, fantasy_level: int) 
             number = 1
         value = (fantasy_level + number)
         if value < 1:
-            list = [False]
+            gi_list = [False]
         else:
-            list = [True] * (value) + [False] * 8
+            gi_list = [True] * value + [False] * 8
     elif sphere == "force":
-        list = [False]
-    return random.choice(list)
+        gi_list = [False]
+    return random.choice(gi_list)
 
 
 def genBeastFant(base) -> str:
@@ -209,10 +211,10 @@ def genBeastFant(base) -> str:
 
 
 def generate_app_base(sph) -> str:
-    '''
+    """
     Gets the template appearance for a god that will later influence
     their traits. Will also add more descriptors later.
-    '''
+    """
     base = ""
     if sph == "good":
         base = random.choice(RANDOM_GENERATOR["good god base templates"])
@@ -322,6 +324,7 @@ def generate_god_appearance(sph, gen, g_of1, g_of2) -> dict:
     countenance = generate_app_countenance(sph, g_of1, g_of2, base)
     return {"base": base, "form": trait1, "phys": trait2, "item": trait3, "countenance": countenance}
 
+
 # below are god generators we can use to tool our program
 
 
@@ -334,7 +337,7 @@ def generateTotallyRandomGodNonPan(fant_lvl: int) -> FantasyGod:
     inv = pick_god_involvement(sph, fant_lvl)
     ang = pick_god_angel_like(sph, inv, fant_lvl)
     inc = pick_god_incarnate(sph, inv, fant_lvl)
-    pan = False  ###This IS temporary
+    pan = False
     appearance = generate_god_appearance(sph, gen, g_of1, g_of2)
     god = FantasyGod.FantasyGod(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
     return god
@@ -349,7 +352,7 @@ def generateGenderedGodNonPan(fant_lvl: int, gender: str) -> FantasyGod:
     inv = pick_god_involvement(sph, fant_lvl)
     ang = pick_god_angel_like(sph, inv, fant_lvl)
     inc = pick_god_incarnate(sph, inv, fant_lvl)
-    pan = False  ###This IS temporary
+    pan = False
     appearance = generate_god_appearance(sph, gen, g_of1, g_of2)
     god = FantasyGod.FantasyGod(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
     return god
@@ -364,10 +367,11 @@ def generateSpheredGodNonPan(fant_lvl: int, sphere: str) -> FantasyGod:
     inv = pick_god_involvement(sph, fant_lvl)
     ang = pick_god_angel_like(sph, inv, fant_lvl)
     inc = pick_god_incarnate(sph, inv, fant_lvl)
-    pan = False  ###This IS temporary
+    pan = False
     appearance = generate_god_appearance(sph, gen, g_of1, g_of2)
     god = FantasyGod.FantasyGod(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
     return god
+
 
 def generateTooledGodNonPan(fant_lvl: int, sphere: str, gender: str, g_of1: str) -> FantasyGod:
     sph = sphere
@@ -378,7 +382,7 @@ def generateTooledGodNonPan(fant_lvl: int, sphere: str, gender: str, g_of1: str)
     inv = pick_god_involvement(sph, fant_lvl)
     ang = pick_god_angel_like(sph, inv, fant_lvl)
     inc = pick_god_incarnate(sph, inv, fant_lvl)
-    pan = False  ###This IS temporary
+    pan = False
     appearance = generate_god_appearance(sph, gen, g_of1, g_of2)
     god = FantasyGod.FantasyGod(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
     return god
@@ -400,6 +404,8 @@ def generatePanGod(fant_lvl: int, pan_member: FantasyGod):
     appearance = generate_god_appearance(sph, gen, g_of1, g_of2)
     god = FantasyGod.FantasyGod(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
     return god
+
+
 # playground below where I mess around with my generators
 
 
