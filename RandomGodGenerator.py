@@ -3,7 +3,7 @@ import FantasyGod
 import json
 import random
 
-with open(r"random_generator.json") as data_file:
+with open(r"random_generator_god_parts.json") as data_file:
     RANDOM_GENERATOR = json.load(data_file)
 
 
