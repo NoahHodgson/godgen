@@ -328,7 +328,7 @@ def generate_god_appearance(sph, gen, g_of1, g_of2) -> dict:
 # below are god generators we can use to tool our program
 
 
-def generateTotallyRandomGodNonPan(fant_lvl: int) -> FantasyGod:
+def generate_totally_random_god_non_pan(fant_lvl: int) -> FantasyGod:
     sph = random.choice(["good", "neutral", "evil", "force", "eldritch"])
     gen = pick_god_gender(sph)
     nm = pick_god_name(sph, gen)
@@ -343,7 +343,7 @@ def generateTotallyRandomGodNonPan(fant_lvl: int) -> FantasyGod:
     return god
 
 
-def generateGenderedGodNonPan(fant_lvl: int, gender: str) -> FantasyGod:
+def generate_gendered_god_non_pan(fant_lvl: int, gender: str) -> FantasyGod:
     sph = random.choice(["good", "neutral", "evil", "force", "eldritch"])
     gen = gender
     nm = pick_god_name(sph, gen)
@@ -358,7 +358,7 @@ def generateGenderedGodNonPan(fant_lvl: int, gender: str) -> FantasyGod:
     return god
 
 
-def generateSpheredGodNonPan(fant_lvl: int, sphere: str) -> FantasyGod:
+def generate_sphered_god_non_pan(fant_lvl: int, sphere: str) -> FantasyGod:
     sph = sphere
     gen = pick_god_gender(sph)
     nm = pick_god_name(sph, gen)
@@ -373,7 +373,7 @@ def generateSpheredGodNonPan(fant_lvl: int, sphere: str) -> FantasyGod:
     return god
 
 
-def generateTooledGodNonPan(fant_lvl: int, sphere: str, gender: str, g_of1: str) -> FantasyGod:
+def generate_tooled_god_non_pan(fant_lvl: int, sphere: str, gender: str, g_of1: str) -> FantasyGod:
     sph = sphere
     gen = gender
     nm = pick_god_name(sph, gen)
@@ -388,14 +388,26 @@ def generateTooledGodNonPan(fant_lvl: int, sphere: str, gender: str, g_of1: str)
     return god
 
 
-def generatePanGod(fant_lvl: int, pan_member: FantasyGod):
-    if pan_member.sphere == 'good' or pan_member.sphere == 'neutral' or pan_member.sphere == 'evil':
+def generate_pan_god(fant_lvl: int, pan_list: [FantasyGod]):
+    unique = False
+    if pan_list[0].sphere == 'good' or pan_list[0].sphere == 'neutral' or pan_list[0].sphere == 'evil':
         sph = random.choice(["good", "neutral", "evil"])
     else:
-        sph = pan_member.sphere
+        sph = pan_list[0].sphere
     gen = pick_god_gender(sph)
     nm = pick_god_name(sph, gen)
     g_of1 = pick_god_of1(sph, nm)
+    # FIXME making sure god of 1 is unique. Very poor way of doing this.
+    while unique:
+        for p in pan_list:
+            if p.god_of1 != g_of1:
+                unique = True
+                continue
+            else:
+                g_of1 = pick_god_of1(sph, nm)
+                unique = False
+                break
+
     g_of2 = pick_god_of2(sph, nm, g_of1)
     inv = pick_god_involvement(sph, fant_lvl)
     ang = pick_god_angel_like(sph, inv, fant_lvl)
@@ -409,6 +421,6 @@ def generatePanGod(fant_lvl: int, pan_member: FantasyGod):
 # playground below where I mess around with my generators
 
 
-Adam = generateTotallyRandomGodNonPan(3)
+Adam = generate_totally_random_god_non_pan(4)
 print("\n")
 Adam.printGod()
