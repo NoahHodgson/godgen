@@ -1,4 +1,4 @@
-#Fantaworld Building-Up by Noah Hodgson 2019-2020
+#Fantaworld Building-Up by Noah Hodgson 2019-2021
 #Goal is to convert the proof of concept code from the god generator into the fantasy world generator
 
 #Version swaps over from dictionaries to classes.
@@ -76,7 +76,7 @@ class FantasyGod:
         
         print("This is " + self.name + "'s overview.")
 
-    #current constructor - missing appearance
+    # constructor
     def __init__(self, nm, sphr, gndr, g_of1, g_of2, inv_lvl, has_ang, has_pan, has_inc, appearance_dict):
         self.name = nm
         self.sphere = sphr

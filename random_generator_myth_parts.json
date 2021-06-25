@@ -1,1 +1,25 @@
-{}
+{
+  "World Name": [""
+    ],
+  "Pre-Universe": ["Formless Void", "Egg", "Graveyard of Other Universes"],
+  "Creation Event": [""],
+  "Good Fantasy Race": [""],
+  "Neutral Fantasy Race": [""],
+  "Evil Fantasy Race": [""],
+  "Good Origin":[""],
+  "Neutral Origin":[""],
+  "Evil Origin":[""],
+
+  "Early Event": [""],
+  "Purifying Event":[""],
+  "Corruption Event": [""],
+  "Civ Name": [""],
+  "Civ Event": [""],
+  "Heroes Event": [""],
+  "Legend Event": [""],
+  "Villain Event" : [""],
+
+  "Good World State Closing": [""],
+  "Neutral World State Closing": [""],
+  "Evil World State Closing": [""]
+}
