@@ -1,0 +1,182 @@
+{
+  "World Name": [
+    "Gaia",
+    "Malia",
+    "Terra",
+    "Jupis",
+    "Lanor",
+    "Valcan",
+    "Io",
+    "Uropa",
+    "Himalia",
+    "Pan",
+    "Thebes",
+    "Amalthea",
+    "Rhea",
+    "Titania",
+    "Kerberos",
+    "Hialka",
+    "Disnomea"
+  ],
+  "Pre-Universe": [
+    "a Formless Void",
+    "an Egg",
+    "a Graveyard of Other Universes",
+    "a Stolen Moon",
+    "an Endless State of Chaos",
+    "a Heaven Above and Darkness Below",
+    "a Watery Planet",
+    "an Explosion of Cosmic Energy",
+    "a Cloud of Mist",
+    "Primordial Beings Which Have Long Since Passed",
+    "Endless Rivers",
+    "a Tree with Endless Roots"
+  ],
+  "Good Creation Event": [
+    "CREATOR carves an intricate tapestry for his creation to inhabit.",
+    "CREATOR was lonely and began creating to feel less alone.",
+    "CREATOR breathed life into the world.",
+    "CREATOR took a week, each day laboring to create a perfect world",
+    "Truth and Lies fought a battle and, with the help of CREATOR, Truth won and it became the world.",
+    "GOOD_GOD and their sibling, CREATOR, made the world and shared it together.",
+    "DEAD_EVIL_GOD was slain and their offspring, CREATOR, made a new, free world."
+  ],
+  "Neutral Creation Event": [
+    "In the expanse, the CREATOR's attributes became the planet",
+    "The elements of the universe fused together, and the CREATOR was born",
+    "CREATOR came to dwell where PLANET and the SKY met.",
+    "CREATOR made the rivers and life emerged on the river banks.",
+    "There are endless realms, this is the one owned by CREATOR who made it their home",
+    "NEUTRAL_GOD and their sibling, CREATOR, made the world and wrestled for control.",
+    "The world was born from the CREATOR's stomach.",
+    "The sun and the moon split the sky, and CREATOR made his home in between.",
+    "DEAD_NEUTRAL_GOD was slain and their offspring, CREATOR, made a new, free world."
+  ],
+  "Evil Creation Event": [
+    "The Evil Lord, CREATOR, took over an existing planet and through his power molded it into his own twisted image.",
+    "CREATOR blotted out the light and in the dark created his home.",
+    "Truth and Lies fought a battle and, with the aid of CREATOR, Lies won and it became the world.",
+    "An obstinate creator, NEUTRAL_GOD, made the world but was overthrown by the conniving CREATOR.",
+    "DEAD_NEUTRAL_GOD and their sibling, CREATOR, made the world. CREATOR killed DEAD_NEUTRAL_GOD in a fit of jealousy."
+  ],
+  "No God Creation Event": [
+    "The elements of the universe fused together and rapidly expanded.",
+    "The world has always existed; this is another beginning in an endless cycle."
+  ],
+  "Good Fantasy Race": [
+    "Angels",
+    "Faries",
+    "Nymphs",
+    "Dryads",
+    "Hobbits",
+    "Satyr"
+  ],
+  "Neutral Fantasy Race": [
+    "Humans",
+    "Elves",
+    "Dwarves",
+    "BEAST-man",
+    "Giants",
+    "Gnomes",
+    "ELEMENT-elementals",
+    "Lizardings"
+  ],
+  "Evil Fantasy Race": [
+    "Orcs",
+    "Goblins",
+    "Gremlins",
+    "Devils",
+    "Trolls",
+    "Yeti"
+  ],
+  "Good Origin": [
+    ""
+  ],
+  "Low Neutral Origin": [
+    ""
+  ],
+  "Mid Neutral Origin": [
+    ""
+  ],
+  "High Neutral Origin": [
+    ""
+  ],
+  "Evil Origin": [
+    ""
+  ],
+  "Low Early Event": [
+    ""
+  ],
+  "Mid Early Event": [
+    ""
+  ],
+  "High Early Event": [
+    ""
+  ],
+  "Purifying Event": [
+    ""
+  ],
+  "Corruption Event": [
+    ""
+  ],
+  "Good Civ Name": [
+    ""
+  ],
+  "Neutral Civ Name": [
+    ""
+  ],
+  "Evil Civ Name": [
+    ""
+  ],
+  "Civ Event": [
+    ""
+  ],
+  "Person Name": [
+    ""
+  ],
+  "Good Interaction": [
+    ""
+  ],
+  "Neutral Interaction": [
+    ""
+  ],
+  "Evil Interaction": [
+    ""
+  ],
+  "Low Heroes Event": [
+    ""
+  ],
+  "Mid Heroes Event": [
+    ""
+  ],
+  "High Heroes Event": [
+    ""
+  ],
+  "Low Legend Event": [
+    ""
+  ],
+  "Mid Legend Event": [
+    ""
+  ],
+  "High Legend Event": [
+    ""
+  ],
+  "Low Villain Event": [
+    ""
+  ],
+  "Mid Villain Event": [
+    ""
+  ],
+  "High Villain Event": [
+    ""
+  ],
+  "Good World State Closing": [
+    ""
+  ],
+  "Neutral World State Closing": [
+    ""
+  ],
+  "Evil World State Closing": [
+    ""
+  ]
+}

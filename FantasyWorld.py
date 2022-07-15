@@ -3,8 +3,9 @@ class FantasyWorld:
     good_evil_score = None
     max_world_age = None
     fantasy_level = None
-    gods = []
-    pantheon = []
+    all_gods = {}
+    gods = {}
+    pantheons = {}
     events = []
     races = []
     civs = []

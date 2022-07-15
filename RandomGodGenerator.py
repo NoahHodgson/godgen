@@ -1,9 +1,9 @@
 # This is the functions and helpers that runs the generate_god program
-import FantasyGod
+import FantasyGod as FantasyGod
 import json
 import random
 
-with open(r"random_generator_god_parts.json") as data_file:
+with open(r"JSON/random_generator_god_parts.json") as data_file:
     RANDOM_GENERATOR = json.load(data_file)
 
 
@@ -388,7 +388,7 @@ def generate_tooled_god_non_pan(fant_lvl: int, sphere: str, gender: str, g_of1: 
     return god
 
 
-def generate_pan_god(fant_lvl: int, pan_list: [FantasyGod]):
+def generate_pan_god(fant_lvl: int, pan_list: dict):
     unique = False
     if pan_list[0].sphere == 'good' or pan_list[0].sphere == 'neutral' or pan_list[0].sphere == 'evil':
         sph = random.choice(["good", "neutral", "evil"])
@@ -419,8 +419,3 @@ def generate_pan_god(fant_lvl: int, pan_list: [FantasyGod]):
 
 
 # playground below where I mess around with my generators
-
-
-Adam = generate_totally_random_god_non_pan(4)
-print("\n")
-Adam.printGod()

@@ -22,6 +22,7 @@ class FantasyGod:
         "item": None,
         "countenance":None
     }
+    is_alive = True
 
     def printGod(self):
         if(self.sphere == "force"):
@@ -88,11 +89,6 @@ class FantasyGod:
         self.has_pantheon = has_pan
         self.has_incarnate = has_inc
         self.appearance = appearance_dict
-
-#This part is the traditional Hades test.
-hades_app = {"trait1": "has staff", "trait2": "dark hair", "trait3":"shaggy beard"}
-Hades = FantasyGod("Hades", "neutral", "male", "death", "wealth", 3, False, True, False, hades_app)
-Hades.printGod()
 
 
 
