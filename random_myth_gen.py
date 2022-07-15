@@ -27,7 +27,24 @@ def creation_event_generator(new_world, sphere):
         new_world.all_gods["creator"] = god
         creation_event = creation_event.replace("CREATOR", god.name)
         creation_event = creation_event.replace("CREATOR"+"'s", god.name+"'s")
+    if "DEAD_GOOD_GOD" in creation_event:
+        god = RandomGodGenerator.generate_sphered_god_non_pan(new_world.fantasy_level, "good")
+        new_world.gods[god.name] = god
+        new_world.all_gods[god.name] = god
+        creation_event = creation_event.replace("DEAD_GOOD_GOD", god.name)
     
+    if "DEAD_NEUTRAL_GOD" in creation_event:
+        god = RandomGodGenerator.generate_sphered_god_non_pan(new_world.fantasy_level, "neutral")
+        new_world.gods[god.name] = god
+        new_world.all_gods[god.name] = god
+        creation_event = creation_event.replace("DEAD_NEUTRAL_GOD", god.name)
+    
+    if "DEAD_EVIL_GOD" in creation_event:
+        god = RandomGodGenerator.generate_sphered_god_non_pan(new_world.fantasy_level, "evil")
+        new_world.gods[god.name] = god
+        new_world.all_gods[god.name] = god
+        creation_event = creation_event.replace("DEAD_EVIL_GOD", god.name)
+        
     if "GOOD_GOD" in creation_event:
         god = RandomGodGenerator.generate_sphered_god_non_pan(new_world.fantasy_level, "good")
         new_world.gods[god.name] = god
@@ -46,23 +63,6 @@ def creation_event_generator(new_world, sphere):
         new_world.all_gods[god.name] = god
         creation_event = creation_event.replace("EVIL_GOD", god.name)
     
-    if "DEAD_GOOD_GOD" in creation_event:
-        god = RandomGodGenerator.generate_sphered_god_non_pan(new_world.fantasy_level, "good")
-        new_world.gods[god.name] = god
-        new_world.all_gods[god.name] = god
-        creation_event = creation_event.replace("DEAD_GOOD_GOD", god.name)
-    
-    if "DEAD_NEUTRAL_GOD" in creation_event:
-        god = RandomGodGenerator.generate_sphered_god_non_pan(new_world.fantasy_level, "neutral")
-        new_world.gods[god.name] = god
-        new_world.all_gods[god.name] = god
-        creation_event = creation_event.replace("DEAD_NEUTRAL_GOD", god.name)
-    
-    if "DEAD_EVIL_GOD" in creation_event:
-        god = RandomGodGenerator.generate_sphered_god_non_pan(new_world.fantasy_level, "evil")
-        new_world.gods[god.name] = god
-        new_world.all_gods[god.name] = god
-        creation_event = creation_event.replace("DEAD_EVIL_GOD", god.name)
 
     creation_event += " Thus began the " + random.choice(["realm ","planet ","Plane of "]) + new_world.name + "."
     new_world.events.append(creation_event)
