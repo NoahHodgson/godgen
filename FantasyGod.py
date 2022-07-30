@@ -6,15 +6,15 @@
 #stores values needed for creating and using god's in order for them to interact with (evenetual) world
 
 class FantasyGod:
-    name = None
-    sphere = None
-    gender = None
-    god_of1 = None
-    god_of2 = None
-    involvement_level = None
-    has_angel_like = None
-    has_pantheon = None
-    has_incarnate = None
+    name: str = None
+    sphere: str = None
+    gender: str = None
+    god_of1: str = None
+    god_of2: str = None
+    involvement_level: int = None
+    has_angel_like: bool = None
+    has_pantheon: bool = None
+    has_incarnate: bool = None
     appearance = {
         "base": None,
         "form": None,
@@ -23,6 +23,7 @@ class FantasyGod:
         "countenance":None
     }
     is_alive = True
+    events = [] 
 
     def printGod(self):
         if(self.sphere == "force"):

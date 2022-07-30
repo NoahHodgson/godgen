@@ -70,21 +70,20 @@ def creation_event_generator(new_world, sphere):
     new_world.events.append(creation_event)
     return creation_event
 
-
+# Break into wayyy more functions
 def early_event_generator(world):
-
     return
 
 
 def generate_random_young_world(fant_lvl) -> FantasyWorld:
-    mwa = 15
-    ge_lvl = 5  # out of 10
+    mwa = 15 # this is going to change, get way bigger
+    ge_lvl = 5  # out of 10, make separate function so we can have many different ones.
     world_name = random.choice(RANDOM_GENERATOR["World Name"])
     new_world = FantasyWorld.FantasyWorld(world_name, ge_lvl, mwa, fant_lvl)
     pantheon = random.choice([True, False])
     creator_alignment = random.choice(["good", "neutral", "evil"])
     creation_event_generator(new_world, creator_alignment)
-    # updating good and evil level
+    # updating good and evil level make this a function
     if list(new_world.gods.values())[0].sphere == 'good':
         ge_lvl += 1
     elif list(new_world.gods.values())[0].sphere or new_world.gods[0].sphere == 'force':
