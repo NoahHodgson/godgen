@@ -27,6 +27,7 @@ def creation_event_generator(new_world, sphere):
         new_world.all_gods["creator"] = god
         creation_event = creation_event.replace("CREATOR", god.name)
         creation_event = creation_event.replace("CREATOR"+"'s", god.name+"'s")
+
     if "DEAD_GOOD_GOD" in creation_event:
         god = RandomGodGenerator.generate_sphered_god_non_pan(new_world.fantasy_level, "good")
         new_world.gods[god.name] = god
@@ -49,7 +50,7 @@ def creation_event_generator(new_world, sphere):
         god = RandomGodGenerator.generate_sphered_god_non_pan(new_world.fantasy_level, "good")
         new_world.gods[god.name] = god
         new_world.all_gods[god.name] = god
-        creation_event = creation_event.replace("GOOD GOD", god.name)
+        creation_event = creation_event.replace("GOOD_GOD", god.name)
 
     if "NEUTRAL_GOD" in creation_event:
         god = RandomGodGenerator.generate_sphered_god_non_pan(new_world.fantasy_level, "neutral")
@@ -83,6 +84,9 @@ def generate_random_young_world(fant_lvl) -> FantasyWorld:
     pantheon = random.choice([True, False])
     creator_alignment = random.choice(["good", "neutral", "evil"])
     creation_event_generator(new_world, creator_alignment)
+    if len(new_world.gods) > 0:
+        list(new_world.gods.values())[0].printGod()
+        print("\n")
     # updating good and evil level make this a function
     if list(new_world.gods.values())[0].sphere == 'good':
         ge_lvl += 1
