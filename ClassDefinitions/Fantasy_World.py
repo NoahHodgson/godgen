@@ -1,10 +1,10 @@
-class FantasyWorld:
+class Fantasy_World:
     name = None
     good_evil_score = None
     max_world_age = None
     fantasy_level = None
     all_gods = {}
-    gods = {}
+    live_gods = {}
     pantheons = {}
     events = []
     races = []

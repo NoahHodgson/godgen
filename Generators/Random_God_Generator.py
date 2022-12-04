@@ -1,5 +1,5 @@
 # This is the functions and helpers that runs the generate_god program
-import FantasyGod as FantasyGod
+import ClassDefinitions.God as God
 import json
 import random
 
@@ -328,7 +328,7 @@ def generate_god_appearance(sph, gen, g_of1, g_of2) -> dict:
 # below are god generators we can use to tool our program
 
 
-def generate_totally_random_god_non_pan(fant_lvl: int) -> FantasyGod:
+def generate_totally_random_god_non_pan(fant_lvl: int) -> God:
     sph = random.choice(["good", "neutral", "evil", "force", "eldritch"])
     gen = pick_god_gender(sph)
     nm = pick_god_name(sph, gen)
@@ -339,11 +339,11 @@ def generate_totally_random_god_non_pan(fant_lvl: int) -> FantasyGod:
     inc = pick_god_incarnate(sph, inv, fant_lvl)
     pan = False
     appearance = generate_god_appearance(sph, gen, g_of1, g_of2)
-    god = FantasyGod.FantasyGod(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
+    god = God.FantasyGod(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
     return god
 
 
-def generate_gendered_god_non_pan(fant_lvl: int, gender: str) -> FantasyGod:
+def generate_gendered_god_non_pan(fant_lvl: int, gender: str) -> God:
     sph = random.choice(["good", "neutral", "evil", "force", "eldritch"])
     gen = gender
     nm = pick_god_name(sph, gen)
@@ -354,11 +354,11 @@ def generate_gendered_god_non_pan(fant_lvl: int, gender: str) -> FantasyGod:
     inc = pick_god_incarnate(sph, inv, fant_lvl)
     pan = False
     appearance = generate_god_appearance(sph, gen, g_of1, g_of2)
-    god = FantasyGod.FantasyGod(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
+    god = God.FantasyGod(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
     return god
 
 
-def generate_sphered_god_non_pan(fant_lvl: int, sphere: str) -> FantasyGod:
+def generate_sphered_god_non_pan(fant_lvl: int, sphere: str) -> God:
     sph = sphere
     gen = pick_god_gender(sph)
     nm = pick_god_name(sph, gen)
@@ -369,11 +369,11 @@ def generate_sphered_god_non_pan(fant_lvl: int, sphere: str) -> FantasyGod:
     inc = pick_god_incarnate(sph, inv, fant_lvl)
     pan = False
     appearance = generate_god_appearance(sph, gen, g_of1, g_of2)
-    god = FantasyGod.FantasyGod(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
+    god = God.FantasyGod(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
     return god
 
 
-def generate_tooled_god_non_pan(fant_lvl: int, sphere: str, gender: str, g_of1: str) -> FantasyGod:
+def generate_tooled_god_non_pan(fant_lvl: int, sphere: str, gender: str, g_of1: str) -> God:
     sph = sphere
     gen = gender
     nm = pick_god_name(sph, gen)
@@ -384,7 +384,7 @@ def generate_tooled_god_non_pan(fant_lvl: int, sphere: str, gender: str, g_of1: 
     inc = pick_god_incarnate(sph, inv, fant_lvl)
     pan = False
     appearance = generate_god_appearance(sph, gen, g_of1, g_of2)
-    god = FantasyGod.FantasyGod(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
+    god = God.FantasyGod(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
     return god
 
 
@@ -414,7 +414,7 @@ def generate_pan_god(fant_lvl: int, pan_list: dict):
     inc = pick_god_incarnate(sph, inv, fant_lvl)
     pan = True
     appearance = generate_god_appearance(sph, gen, g_of1, g_of2)
-    god = FantasyGod.FantasyGod(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
+    god = God.FantasyGod(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
     return god
 
 

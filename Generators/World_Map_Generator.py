@@ -1,9 +1,10 @@
-import Location
+import ClassDefinitions.Location as Location
 import json
 import random
 
 BASIC_RANGE = [0,1,2,3,4,5]
-SIZE = 9
+# min SIZE = 6, I'd recommend 8 - 13 for good worlds, doesn't work past 20.
+SIZE = 8
 
 def Print_Terrain(grid):
     for i in range(SIZE):
@@ -22,13 +23,13 @@ def Print_Emoticon(grid):
                 print('⬜', end=' ')
             elif grid[j][i].biome == 'water':
                 print('🟦', end=' ')
-            elif grid[j][i].temperature == 1:
-                print('⬜', end=' ')
             elif grid[j][i].elevation > 3:
                 print('🔺', end=' ')
             elif grid[j][i].vegitation > 3:
                 print('🌳', end=' ')
-            elif grid[j][i].temperature > 3 or grid[j][i].vegitation <= 1:
+            elif grid[j][i].temperature == 1:
+                print('⬜', end=' ')
+            elif grid[j][i].temperature > 3 and grid[j][i].vegitation <= 2:
                 print('🟨', end=' ')
             else:
                 print('🟩', end=' ')
@@ -45,17 +46,32 @@ def Ocean_Generator(grid, flood_limit):
             break
         for j in range(SIZE):
             if grid[j][i].elevation == 0 and grid[j][i].temperature != 0:
-                flood = random.choice([False, True, True, True, True])
+                choice=[False, True, True, True, True]
+                if SIZE > 8:
+                    choice.append(False)
+                if SIZE > 17:
+                    choice.append(False)
+                flood = random.choice(choice)
                 if flood:
                     grid[j][i].submerge()
                     flood_limit-= 1
             elif grid[j][i].elevation == 1 and grid[j][i].temperature != 0:
-                flood = random.choice([False, True, True, True])
+                choice = [False, True, True, True]
+                if SIZE > 8:
+                    choice.append(False)
+                if SIZE > 17:
+                    choice.append(False)
+                flood = random.choice(choice)
                 if flood:
                     grid[j][i].submerge()
                     flood_limit-= 1
             elif grid[j][i].elevation == 2 and grid[j][i].temperature != 0:
-                flood = random.choice([False, True])
+                choice = [False, True]
+                if SIZE > 8:
+                    choice.append(False)
+                if SIZE > 17:
+                    choice.append(False)
+                flood = random.choice(choice)
                 if flood:
                     grid[j][i].submerge()
                     flood_limit-= 1
@@ -82,6 +98,7 @@ def Basic_Polar_World_Generator():
 
             if last_height != -1:
                 NEW_RANGE = BASIC_RANGE.copy()
+                NEW_RANGE.extend([1,2,3])
                 NEW_RANGE.extend([last_height, last_height])
                 if last_height != 0 and last_height != 5:
                     NEW_RANGE.extend([last_height+1, last_height-1])
@@ -111,7 +128,7 @@ def Basic_Polar_World_Generator():
             
 
 
-    Ocean_Generator(grid, 10)
+    Ocean_Generator(grid, round(SIZE*SIZE/5)+2)
     Print_Emoticon(grid)
     return grid
 

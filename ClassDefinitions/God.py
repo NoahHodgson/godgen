@@ -5,7 +5,7 @@
 
 #stores values needed for creating and using god's in order for them to interact with (evenetual) world
 
-class FantasyGod:
+class God:
     name: str = None
     sphere: str = None
     gender: str = None
@@ -25,7 +25,7 @@ class FantasyGod:
     is_alive = True
     events = [] 
 
-    def printGod(self):
+    def print_god(self):
         if(self.sphere == "force"):
             print("This is " + self.name + ", the force of " + self.god_of1 + " and " + self.god_of2 + ". ")
         elif(self.sphere == "eldritch"):
