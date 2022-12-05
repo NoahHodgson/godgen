@@ -6,6 +6,7 @@ class Society:
     name: str = None
     members: list = []
     worships: list = []
+    tech_age: str = None
 
     allied_to: list = []
     enemy_of: list = []
@@ -14,10 +15,11 @@ class Society:
     is_alive = True
     events = []
 
-    def __init__(self, nm, members, worships, allies, enemies, own, events):
+    def __init__(self, nm, members, worships, age, allies, enemies, own, events):
         self.name = nm
         self.members = members
         self.worships = worships
+        self.tech_age = age
         self.allied_to = allies
         self.enemy_of = enemies
         self.own = own
