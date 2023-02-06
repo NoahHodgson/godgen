@@ -1,4 +1,4 @@
-import ClassDefinitions.Location as Location
+import Location
 import json
 import random
 
