@@ -1,4 +1,4 @@
-import ClassDefinitions.God as God
+import God
 
 class Hero:
     name: str = None
