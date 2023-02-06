@@ -1,5 +1,5 @@
 # This is the functions and helpers that runs the generate_god program
-import ClassDefinitions.God as God
+import God
 import json
 import random
 

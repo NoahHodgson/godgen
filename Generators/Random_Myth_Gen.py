@@ -1,5 +1,5 @@
-import ClassDefinitions.God as God
-import ClassDefinitions.Fantasy_World as Fantasy_World
+import God
+import Fantasy_World
 import json
 import random
 
