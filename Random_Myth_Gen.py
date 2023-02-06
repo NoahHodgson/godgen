@@ -87,7 +87,7 @@ def generate_random_young_world(fant_lvl) -> Fantasy_World:
     if len(new_world.live_gods) > 0:
         list(new_world.live_gods.values())[0].print_god()
         print("\n")
-    # updating good and evil level make this a function
+    # updating good and evil level make this a function later
     if list(new_world.live_gods.values())[0].sphere == 'good':
         ge_lvl += 1
     elif list(new_world.live_gods.values())[0].sphere or new_world.live_gods[0].sphere == 'force':

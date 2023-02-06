@@ -339,7 +339,7 @@ def generate_totally_random_god_non_pan(fant_lvl: int) -> God:
     inc = pick_god_incarnate(sph, inv, fant_lvl)
     pan = False
     appearance = generate_god_appearance(sph, gen, g_of1, g_of2)
-    god = God.FantasyGod(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
+    god = God.God(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
     return god
 
 
@@ -354,7 +354,7 @@ def generate_gendered_god_non_pan(fant_lvl: int, gender: str) -> God:
     inc = pick_god_incarnate(sph, inv, fant_lvl)
     pan = False
     appearance = generate_god_appearance(sph, gen, g_of1, g_of2)
-    god = God.FantasyGod(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
+    god = God.God(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
     return god
 
 
@@ -369,7 +369,7 @@ def generate_sphered_god_non_pan(fant_lvl: int, sphere: str) -> God:
     inc = pick_god_incarnate(sph, inv, fant_lvl)
     pan = False
     appearance = generate_god_appearance(sph, gen, g_of1, g_of2)
-    god = God.FantasyGod(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
+    god = God.God(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
     return god
 
 
@@ -384,7 +384,7 @@ def generate_tooled_god_non_pan(fant_lvl: int, sphere: str, gender: str, g_of1: 
     inc = pick_god_incarnate(sph, inv, fant_lvl)
     pan = False
     appearance = generate_god_appearance(sph, gen, g_of1, g_of2)
-    god = God.FantasyGod(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
+    god = God.God(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
     return god
 
 
@@ -414,7 +414,7 @@ def generate_pan_god(fant_lvl: int, pan_list: dict):
     inc = pick_god_incarnate(sph, inv, fant_lvl)
     pan = True
     appearance = generate_god_appearance(sph, gen, g_of1, g_of2)
-    god = God.FantasyGod(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
+    god = God.God(nm, sph, gen, g_of1, g_of2, inv, ang, pan, inc, appearance)
     return god
 
 
